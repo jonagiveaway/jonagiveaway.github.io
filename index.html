@@ -1,1 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jona Giveaway</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0fff4;
+      color: #183b25;
+    }
+
+    header {
+      background: #075e32;
+      color: white;
+      text-align: center;
+      padding: 22px 12px;
+    }
+
+    header h1 {
+      font-size: 27px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    .page {
+      display: none;
+      max-width: 480px;
+      margin: 35px auto;
+      padding: 25px 18px;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .welcome-card {
+      background: linear-gradient(145deg, #08783d, #19a65b);
+      color: white;
+      padding: 45px 22px;
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: 0 8px 25px #0002;
+    }
+
+    .welcome-card .icon {
+      font-size: 55px;
+      margin-bottom: 20px;
+    }
+
+    .welcome-card h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .welcome-card p {
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 14px 20px;
+    }
+
+    .continue-btn {
+      background: white;
+      color: #08783d;
+      width: 100%;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #08783d;
+      font-size: 29px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #52675a;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .investment-card {
+      background: white;
+      border: 2px solid #ccebd6;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px #00000008;
+    }
+
+    .investment-card h3 {
+      color: #08783d;
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .investment-card p {
+      margin-bottom: 15px;
+      color: #4b6353;
+    }
+
+    .investment-card button {
+      width: 100%;
+      color: white;
+      background: #07843f;
+    }
+
+    .investment-card button:hover,
+    .continue-btn:hover {
+      opacity: 0.88;
+    }
+
+    .duration {
+      background: #dff8e7;
+      border-radius: 12px;
+      text-align: center;
+      padding: 18px 12px;
+      margin-top: 22px;
+      line-height: 1.7;
+    }
+
+    .notice {
+      margin-top: 20px;
+      padding: 14px;
+      background: #fff8df;
+      border-left: 4px solid #d6a500;
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #594a16;
+    }
+
+    .back-btn {
+      width: 100%;
+      margin-top: 20px;
+      background: #e1f2e6;
+      color: #075e32;
+    }
+
+    footer {
+      text-align: center;
+      color: #678071;
+      font-size: 13px;
+      padding: 25px 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>💚 JONA GIVEAWAY</h1>
+    <p>Creating Financial Stability</p>
+  </header>
+
+  <!-- PAGE ONE: WELCOME -->
+  <main>
+    <section id="welcome" class="page active">
+      <div class="welcome-card">
+        <div class="icon">🎁</div>
+
+        <h2>Welcome to Jona Giveaway</h2>
+
+        <p>
+          Welcome! Explore the available plans and read
+          the terms carefully before making any financial
+          decision.
+        </p>
+
+        <button class="continue-btn" onclick="showPage('invest')">
+          CONTINUE →
+        </button>
+      </div>
+    </section>
+
+    <!-- PAGE TWO: INVESTMENT OPTIONS -->
+    <section id="invest" class="page">
+      <h2 class="section-title">INVEST</h2>
+
+      <p class="subtitle">
+        Select a plan to view its advertised potential return.
+        Returns are not guaranteed.
+      </p>
+
+      <div class="investment-card">
+        <h3>Plan 1</h3>
+        <p>Amount: <strong>₦6,000</strong></p>
+        <p>Advertised potential return: <strong>₦20,000</strong></p>
+        <button onclick="selectPlan('₦6,000', '₦20,000')">
+          VIEW PLAN
+        </button>
+      </div>
+
+      <div class="investment-card">
+        <h3>Plan 2</h3>
+        <p>Amount: <strong>₦10,000</strong></p>
+        <p>Advertised potential return: <strong>₦50,000</strong></p>
+        <button onclick="selectPlan('₦10,000', '₦50,000')">
+          VIEW PLAN
+        </button>
+      </div>
+
+      <div class="investment-card">
+        <h3>Plan 3</h3>
+        <p>Amount: <strong>₦20,000</strong></p>
+        <p>Advertised potential return: <strong>₦100,000</strong></p>
+        <button onclick="selectPlan('₦20,000', '₦100,000')">
+          VIEW PLAN
+        </button>
+      </div>
+
+      <div class="duration">
+        ⏱️ <strong>Investment duration: 30 minutes</strong>
+        <p>Please verify the actual terms before investing.</p>
+      </div>
+
+      <div id="plan-details" class="investment-card" hidden>
+        <h3>Selected Plan</h3>
+        <p>Amount: <strong id="selected-amount"></strong></p>
+        <p>Advertised potential return:
+          <strong id="selected-return"></strong>
+        </p>
+        <p>
+          This selection does not make a payment or create
+          an investment. Confirm the provider and all terms
+          independently before sending money.
+        </p>
+        <button onclick="closePlan()">CLOSE</button>
+      </div>
+
+      <div class="notice">
+        <strong>Important financial notice:</strong>
+        Investment returns are not guaranteed. You could
+        lose money. A 30-minute period does not guarantee
+        that a return will be earned or paid.
+      </div>
+
+      <button class="back-btn" onclick="showPage('welcome')">
+        ← BACK TO WELCOME
+      </button>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Jona Giveaway. Please make informed
+    financial decisions.
+  </footer>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(function(page) {
+        page.classList.remove('active');
+      });
+
+      document.getElementById(pageId).classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    function selectPlan(amount, potentialReturn) {
+      document.getElementById('selected-amount').textContent = amount;
+      document.getElementById('selected-return').textContent =
+        potentialReturn;
+
+      document.getElementById('plan-details').hidden = false;
+      document.getElementById('plan-details').scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+    }
+
+    function closePlan() {
+      document.getElementById('plan-details').hidden = true;
+    }
+  </script>
+
+</body>
+      </html>
+      
